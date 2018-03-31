@@ -2,12 +2,10 @@
 
 HOW TO RUN: 
 
-Add Configuration:
+#1) Add Configuration:
 select Run->Run Configurations->Arguments->VM Arguments. Add -Dspring.profiles.active=local
 
-Open file "WeProStartUp.java" and run it as a java application.
-
-Dummy Database Script:
+#2) Create Dummy Database:
 
 Create database with name "wePro"
 
@@ -26,3 +24,8 @@ VALUES ('Sam',30,'sam@gmail.com');
    
 INSERT INTO user(name,age,email)
 VALUES ('Tom',40,'tom@gmail.com');
+
+
+#3) Open file "WeProStartUp.java" and run it as a java application.
+
+#4) Check if everything is working fine by hitting URL : http://localhost:8080/wePro/#/
