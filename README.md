@@ -1,5 +1,7 @@
 # wePro
 
+Import this project as a maven project to your eclipse.
+
 HOW TO RUN: 
 
 #1) Add Configuration:
