@@ -58,3 +58,4 @@ The Server will send only the JSON data, the UI design will be handled by the cl
 ```
 application.properties : This file holds configuration information like database URL, username, password.
 ```
+
