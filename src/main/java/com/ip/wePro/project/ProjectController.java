@@ -17,14 +17,14 @@ public class ProjectController {
         return projectService.getAllProjects();
     }
 
-    @GetMapping("/get/{status}")
-    public List<Project> getAllProjectsByStatusId(@PathVariable String status){
+    @GetMapping("/get")
+    public List<Project> getAllProjectsByStatusId(@RequestParam(value = "status") String status){
         return projectService.getAllProjectsByStatusId(ProjectStatus.valueOf(status.toUpperCase()).value());
     }
 
     @GetMapping("/get/{uid}/{status}")
-    public List<Project> getAllProjectsByStatusIdAndAndOwner(@PathVariable int uid, @PathVariable String status){
-        return projectService.getAllProjectsByStatusIdAndAndOwner(uid, ProjectStatus.valueOf(status.toUpperCase()).value());
+    public List<Project> getAllProjectsByStatusIdAndOwner(@PathVariable int uid, @PathVariable String status){
+        return projectService.getAllProjectsByStatusIdAndOwner(uid, ProjectStatus.valueOf(status.toUpperCase()).value());
     }
 
     @PostMapping("/add")
@@ -46,5 +46,10 @@ public class ProjectController {
     @PutMapping("/update")
     public void updateProject(@RequestBody Project project){
         projectService.updateProject(project);
+    }
+
+    @GetMapping("/get/{uid}")
+    public List<Project> getAllProjectsByOwner(@PathVariable int uid, @PathVariable String status){
+        return projectService.getAllProjectsByStatusIdAndOwner(uid, ProjectStatus.valueOf(status.toUpperCase()).value());
     }
 }
