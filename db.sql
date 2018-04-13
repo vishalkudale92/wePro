@@ -37,3 +37,11 @@ create table project_skills(
 	project_id int not null,
 	skill_name varchar(255) not null
 );
+     
+create table assessment_result(
+		user_id varchar(255),
+		assessment_id varchar(255),
+		result float(4,2),
+		primary key (user_id,assessment_id),
+		FOREIGN KEY (user_id) REFERENCES user(user_id)
+	);

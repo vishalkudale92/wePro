@@ -23,10 +23,10 @@ public class AssessmentController {
 	@PostMapping("/add/{projectId}")	
 	public String addAssessment(@RequestBody AssessmentList assessmentList,@PathVariable int projectId)
 	{
-		//System.out.println("list="+assessment + "\nPID="+projectId);
+		System.out.println("list="+assessmentList + "\nPID="+projectId);
 		return assessmentService.addAssessment(assessmentList,projectId);		
 	}
-	
+		
 	/* This method will retrieve the list of all questions & their respective options of respective assessment*/
 	@GetMapping("/get/{assessmentId}")
 	public List<Assessment> getAssessment(@PathVariable String assessmentId)

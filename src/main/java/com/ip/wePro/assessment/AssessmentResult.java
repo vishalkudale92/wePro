@@ -1,63 +1,60 @@
 package com.ip.wePro.assessment;
 
-import javax.persistence.Column;
+//import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name ="assessment_result")
-public class AssessmentResult {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
-	private String userId;
+public class AssessmentResult implements Comparable<AssessmentResult>{
 	
-	@Column(name = "assessment_id")
-	private String assessmentId;
+	@EmbeddedId
+	private ProjectAssessmentMappingForResultSubmission projectAssessmentMappingForResultSubmission;
 	
-	private int result;
+	private float result;
 	
 	public AssessmentResult()
 	{
 		
 	}
 
-	public AssessmentResult(String userId, String assessmentId, int result) {
+	public AssessmentResult(ProjectAssessmentMappingForResultSubmission projectAssessmentMappingForResultSubmission,
+			float result) {
 		super();
-		this.userId = userId;
-		this.assessmentId = assessmentId;
+		this.projectAssessmentMappingForResultSubmission = projectAssessmentMappingForResultSubmission;
 		this.result = result;
 	}
 
-	public String getUserId() {
-		return userId;
+	public ProjectAssessmentMappingForResultSubmission getProjectAssessmentMappingForResultSubmission() {
+		return projectAssessmentMappingForResultSubmission;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setProjectAssessmentMappingForResultSubmission(
+			ProjectAssessmentMappingForResultSubmission projectAssessmentMappingForResultSubmission) {
+		this.projectAssessmentMappingForResultSubmission = projectAssessmentMappingForResultSubmission;
 	}
 
-	public String getAssessmentId() {
-		return assessmentId;
-	}
-
-	public void setAssessmentId(String assessmentId) {
-		this.assessmentId = assessmentId;
-	}
-
-	public int getResult() {
+	public float getResult() {
 		return result;
 	}
 
-	public void setResult(int result) {
+	public void setResult(float result) {
 		this.result = result;
 	}
 
 	@Override
 	public String toString() {
-		return "AssessmentResult [userId=" + userId + ", assessmentId=" + assessmentId + ", result=" + result + "]";
-	}	
+		return "AssessmentResult [projectAssessmentMappingForResultSubmission="
+				+ projectAssessmentMappingForResultSubmission + ", result=" + result + "]";
+	}
+
+	@Override
+	public int compareTo(AssessmentResult o) {
+		// TODO Auto-generated method stub
+		return (int) (o.getResult()-this.getResult());
+	}
 }

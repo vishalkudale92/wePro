@@ -25,8 +25,7 @@ public class AssessmentService {
 		// Setting up the customized id for each question
 		for(int i=0;i<length;i++)
 		{
-			allQuestions.get(i).setAssessmentId(assessmentId);
-			//System.out.println(allQuestions.get(i).getAssessmentId());		
+			allQuestions.get(i).setAssessmentId(assessmentId);		
 		}
 		
 		assessmentRepository.saveAll(allQuestions);		
@@ -39,7 +38,7 @@ public class AssessmentService {
 	{			
 		List<Assessment> allQuestions = assessmentRepository.findWholeAssessmentById(assessmentId);
 		
-		//Changing the correct_solution & marks value to garbage. So that user will not get the correct values. 
+		//Changing the correct_solution & marks value to garbage. So that user will not get the correct solution values. 
 		for(int i=0;i<allQuestions.size();i++)
 		{
 			allQuestions.get(i).setCorrectAnswer(-1);
@@ -52,14 +51,11 @@ public class AssessmentService {
 	public void updateAssessment(AssessmentList assessmentList)
 	{
 		List<Assessment> allQuestions = assessmentList.getAssessmentQuestions();
-		//System.out.println(allQuestions);
 		assessmentRepository.saveAll(allQuestions);
 	}
-	
-	
+		
 	public void deleteAssessment(String assessmentId)
 	{
 		assessmentRepository.deleteWholeAssessmentById(assessmentId);
 	}
-
 }
