@@ -44,8 +44,8 @@ public class ProjectService {
         projectRepository.save(project);
     }
 
-    public List<Project> getAllProjectsByStatusIdAndAndOwner(int owner, int status) {
-        return projectRepository.findAllByStatusIdAndAndOwner(owner, status);
+    public List<Project> getAllProjectsByStatusIdAndOwner(int owner, int status) {
+        return projectRepository.findAllByStatusIdAndOwner(owner, status);
     }
 
     public List<Project> getAllProjectsByStatusId(int status) {
