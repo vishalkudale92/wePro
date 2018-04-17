@@ -13,7 +13,9 @@
 
             .when("/mhire", {
                 templateUrl: "views/ManagerHireAssess/templates/ManagerHireAssess.view.client.html",
-                controller: "TopicController",
+                controller: "ManagerHireAssess",
+		controllerAs: "model"
+	    })
 
             .when("/project/:uid/open", {
                 templateUrl: "views/project/templates/project.open.view.client.html",
@@ -23,7 +25,6 @@
             .when("/project/:uid/add", {
                 templateUrl: "views/project/templates/project.owner.view.client.html",
                 controller: "OwnerProjectController",
-
                 controllerAs: "model"
             })
             .otherwise({

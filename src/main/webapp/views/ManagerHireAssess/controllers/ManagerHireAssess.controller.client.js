@@ -1,15 +1,21 @@
+(function () {
+    angular
+        .module("weProApp")
+        .controller("ManagerHireAssess",managerHireAssess);
 
-angular.module("weProApp")
-  .controller("ManagerHireAssess", function() {
-    var ctrl = this;
-    
-    var forms = [
-      "form1.tpl.html",
-    ];
-    
-    ctrl.displayedForms = [];
-    
-    ctrl.addForm = function(formIndex) {
-      ctrl.displayedForms.push(forms[formIndex]);
+    function managerHireAssess() {
+        var vm = this;
+        vm.displayedForms = [];
+        vm.addForm = addForm;
+        
+        var forms = [
+	      "form1.tpl.html",
+	    ];
+
+       function addForm(formIndex) {
+      		vm.displayedForms.push(forms[formIndex]);
+    	}
+    	
+    	
     }
-  });
+})();
