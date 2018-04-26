@@ -27,6 +27,16 @@
                 controller: "OwnerProjectController",
                 controllerAs: "model"
             })
+            .when("/login", {
+                templateUrl: "views/Login/templates/login.view.client.html",
+                controller: "LoginController",
+                controllerAs: "model"
+            })
+            .when("/register", {
+                templateUrl: "views/Register/templates/register.view.client.html",
+                controller: "RegisterController",
+                controllerAs: "model"
+            })
             .otherwise({
                 redirectTo: "/"
             });
