@@ -37,6 +37,26 @@
                 controller: "RegisterController",
                 controllerAs: "model"
             })
+            .when("/assessment_status/:uid", {
+                templateUrl: "views/assessment_status/templates/project.assessmentStatus.view.client.html",
+                controller: "assessmentStatusController",
+                controllerAs: "model"
+            })
+            .when("/assessment_status/:uid/:status", {
+                templateUrl: "views/assessment_status/templates/project.assessmentStatus.view.client.html",
+                controller: "assessmentStatusController",
+                controllerAs: "model"
+            })
+            .when("/project/userprojects/:uid", {
+                templateUrl: "views/project/templates/UserOpenProjects.html",
+                controller: "UserOpenProjects",
+                controllerAs: "model"
+            })
+            .when("/project/userprojects/history/:uid", {
+                templateUrl: "views/project/templates/UserClosedProjects.html",
+                controller: "UserClosedProjects",
+                controllerAs: "model"
+            })
             .otherwise({
                 redirectTo: "/"
             });
