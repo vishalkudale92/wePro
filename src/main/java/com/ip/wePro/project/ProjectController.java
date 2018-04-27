@@ -52,4 +52,11 @@ public class ProjectController {
     public List<Project> getAllProjectsByOwner(@PathVariable int uid, @PathVariable String status){
         return projectService.getAllProjectsByStatusIdAndOwner(uid, ProjectStatus.valueOf(status.toUpperCase()).value());
     }
+
+    @GetMapping("/get/byprojectid/{id}")
+    public List<Project> getAllProjectsByProjectID(@PathVariable int id){
+        return projectService.getAllProjectsByProjectID(id);
+    }
+
+
 }
