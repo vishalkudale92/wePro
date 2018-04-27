@@ -16,14 +16,14 @@
        
        function addAssessment(assessment)
        {
-//    	  console.log(assessment);
+    	 //  console.log(assessment);
     	   var assessmentSet =  {"assessmentQuestions":assessment};
     	   console.log(assessmentSet);
-    	   var projectId = 0001; 
+    	   var projectId = 9999; 
     	   ManagerHireAssessService.addAssessment(projectId,assessmentSet).then(function (assessment_id) {
-              console.log("Assessment ID from server"+assessment_id);
+               console.log("Assessment ID from server"+assessment_id);
            });
        }    	
     }
-    
 })();
+
