@@ -1,10 +1,12 @@
-package com.ip.wePro.UserInfo;
+package com.ip.wePro.userInfo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User,Long> {
-    User findById(int id);
-    boolean deleteById(int id);
+// creating user repository to access the data from database
+
+public interface UserRepository extends JpaRepository<User,Integer> {
+
+
 }
 
 

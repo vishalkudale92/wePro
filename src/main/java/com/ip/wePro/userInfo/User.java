@@ -1,24 +1,25 @@
-package com.ip.wePro.UserInfo;
+package com.ip.wePro.userInfo;
+import javax.persistence.*;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
+@Entity
 public class User {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userid;
     private String name;
     private String dob;
     private String gender;
     private String address;
-    @Id
     private String email;
     private String phone;
     private String edu;
     private String experience;
     private String skills;
     private String password;
+
+    protected User(){}
 
     public User(int userid, String name, String dob, String gender, String address, String email, String phone, String edu, String experience, String skills, String password) {
         this.userid = userid;
@@ -121,5 +122,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "User{" +
+                "userid=" + userid +
+                ", name='" + name + '\'' +
+                ", dob='" + dob + '\'' +
+                ", gender='" + gender + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", edu='" + edu + '\'' +
+                ", experience='" + experience + '\'' +
+                ", skills='" + skills + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
