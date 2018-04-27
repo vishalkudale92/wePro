@@ -37,6 +37,16 @@
                 controller: "RegisterController",
                 controllerAs: "model"
             })
+            .when("/assessment_status/:uid", {
+                templateUrl: "views/assessment_status/templates/project.assessmentStatus.view.client.html",
+                controller: "assessmentStatusController",
+                controllerAs: "model"
+            })
+            .when("/assessment_status/:uid/:status", {
+                templateUrl: "views/assessment_status/templates/project.assessmentStatus.view.client.html",
+                controller: "assessmentStatusController",
+                controllerAs: "model"
+            })
             .otherwise({
                 redirectTo: "/"
             });
