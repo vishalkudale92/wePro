@@ -1,32 +1,24 @@
 (function () {
     angular
         .module("weProApp")
-        .controller("ProfileController",profileController);
-
-    function profileController(TopicService) {
+        .controller("UserProfileController", userProfileController);
+    function userProfileController(ProfileService) {
         var vm = this;
-        vm.addTopic = addTopic;
 
         function init() {
-            vm.topics = undefined;
-            loadAllTopics();
+            vm.profile = undefined;
+            loadUserProfile();
         }
 
         init();
 
-        function loadAllTopics() {
-            TopicService.getAllTopics()
-                .then(function (topics) {
-                    vm.topics = topics.data;
-                });
-        }
-
-        function addTopic(topic) {
-            console.log(topic);
-            TopicService.addTopic(topic)
-                .then(function (status) {
-                    init();
+        function loadUserProfile() {
+            ProfileService.getProfile(1)
+                .then(function (profile) {
+                    vm.profile = profile.data;
+                    console.log(vm.profile);
                 });
         }
     }
+
 })();
