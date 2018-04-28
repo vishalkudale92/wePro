@@ -1,39 +1,50 @@
-<h1> PROFILE </h1>
-
-<label>Name </label>
-<input ng-model="topic.name" class="form-control">
-
-<br>
-
-<label>Date Of Birth </label>
-<input type="date" class="form-control" id="validationDefault03"></input>
-
-<br>
-
-<label>Gender </label>
-<input ng-model="topic.name" class="form-control">
-<br>
+<h1>Welcome <a >{{model.profile.name}}</a>
+</h1>
 
 
-<label>Home Address </label>
-<input ng-model="topic.name" class="form-control">
-<br>
+<!-- <div ng-repeat="profile in model.getUserProfile"> -->
+    <div>
+     <div class="card mb-3 col-sm-10">
 
-<label>Email </label>
-<input ng-model="topic.name" class="form-control">
-<br>
+        <div class="card-body">
+            <h5 class="card-title">Date Of Birth</h5>
+            <p class="card-text">{{model.profile.dob}}</p>
+        </div>
 
-<label>Phone Number </label>
-<input ng-model="topic.name" class="form-control">
-<br>
+        <div class="card-body">
+            <h5 class="card-title">Gender</h5>
+            <p class="card-text">{{model.profile.gender}}</p>
+        </div>
 
-<label>Education </label>
-<input ng-model="topic.name" class="form-control">
-<br>
+        <div class="card-body">
+            <h5 class="card-title">Address</h5>
+            <p class="card-text">{{model.profile.address}}</p>
+        </div>
 
-<label>Experience </label>
-<textarea ng-model="topic.description" class="form-control"></textarea>
-<br>
+        <div class="card-body">
+            <h5 class="card-title">Email</h5>
+            <p class="card-text">{{model.profile.email}}</p>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Phone Number</h5>
+            <p class="card-text">{{model.profile.phone}}</p>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Education</h5>
+            <p class="card-text">{{model.profile.edu}}</p>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Experience</h5>
+            <p class="card-text">{{model.profile.experience}}</p>
+        </div>
+
+
+    </div>
+    <a href="#" class="btn btn-primary">Edit Profile</a>
+
 
 <!-- <label>Skills and Specialization </label>
 <textarea ng-model="topic.description" class="form-control"></textarea>
@@ -43,3 +54,5 @@
 <button ng-click="model.addTopic(topic)" class="btn btn-primary btn-block">Create</button>
 <button ng-click="updateTodo(todo)" class="btn btn-success btn-block">Refresh</button>
 
+
+</div>

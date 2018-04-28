@@ -105,10 +105,6 @@ public class User {
     public void setExperience(String experience) {
         this.experience = experience;
     }
-
-    
-
-
     public String getPassword() {
         return password;
     }
