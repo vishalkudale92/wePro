@@ -1,4 +1,4 @@
-<h1>Welcome <a >{{model.profile.name}}</a>
+<h1>Welcome <a >{{model.profile.firstname + " "+ model.profile.lastname}}</a>
 </h1>
 
 
@@ -32,8 +32,8 @@
         </div>
 
         <div class="card-body">
-            <h5 class="card-title">Education</h5>
-            <p class="card-text">{{model.profile.edu}}</p>
+            <h5 class="card-title">Occupation</h5>
+            <p class="card-text">{{model.profile.occupation}}</p>
         </div>
 
         <div class="card-body">

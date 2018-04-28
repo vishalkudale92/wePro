@@ -23,21 +23,22 @@ create table project(
 	pay int,
 	primary key(id)
 );
-create table user
-(
-       userid int not null auto_increment,
-       name varchar(255),
-       dob varchar(255),
-       gender varchar(255),
-       address varchar(255),
-       email varchar(255),
-       phone varchar(255),
-       edu varchar(255),
-       experience varchar(255),
-       password varchar(255),
-       primary key(userid)
-);
+CREATE TABLE `user` (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+   `email` varchar(255) DEFAULT NULL,
+   `firstname` varchar(255) DEFAULT NULL,
+   `lastname` varchar(45) DEFAULT NULL,
+   `password` varchar(255) DEFAULT NULL,
+   `dob` varchar(255) DEFAULT NULL,
+   `gender` varchar(255) DEFAULT NULL,
+   `address` varchar(255) DEFAULT NULL,
+   `phone` varchar(255) DEFAULT NULL,
+   `occupation` varchar(255) DEFAULT NULL,
+   `experience` varchar(255) DEFAULT NULL,
+   `description` varchar(700) DEFAULT NULL,
 
+   PRIMARY KEY (`id`)
+ );
 
 create table skills(
 	id int not null auto_increment,

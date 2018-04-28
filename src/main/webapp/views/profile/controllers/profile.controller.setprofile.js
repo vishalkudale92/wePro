@@ -5,26 +5,21 @@
 
     function profileController(ProfileService) {
         var vm = this;
-        vm.addTopic = addTopic;
+        //vm.addTopic = addTopic;
         vm.updateProfile = updateProfile;
 
 
         function init() {
 
-            vm.topics = undefined;
+             vm.oldprofile = undefined;
+            // vm.topics = undefined;
             // loadAllTopics();
+            loadOldUserProfile();
 
             console.log("Hi, inside profile controller!! ")
         }
 
         init();
-
-        function loadAllTopics() {
-            ProfileService.getAllTopics()
-                .then(function (topics) {
-                    vm.topics = topics.data;
-                });
-        }
 
         function updateProfile(profile){
             console.log(profile);
@@ -34,12 +29,12 @@
                                                                   });
         }
 
-        function addTopic(topic) {
-            console.log(topic);
 
-            ProfileService.addTopic(topic)
-                .then(function (status) {
-                    init();
+        function loadOldUserProfile() {
+            ProfileService.getProfile(1)
+                .then(function (profile) {
+                    vm.oldprofile = profile.data;
+                    console.log(vm.profile);
                 });
         }
     }
