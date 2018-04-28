@@ -22,8 +22,22 @@ public class User {
 
     protected User(){}
 
-    public int getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", password='" + password + '\'' +
+                ", dob='" + dob + '\'' +
+                ", gender='" + gender + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", occupation='" + occupation + '\'' +
+                ", experience='" + experience + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 
     public User(int id, String email, String firstname, String lastname, String password, String dob, String gender, String address, String phone, String occupation, String experience, String description) {
@@ -39,6 +53,10 @@ public class User {
         this.occupation = occupation;
         this.experience = experience;
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setId(int id) {
@@ -131,23 +149,5 @@ public class User {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", password='" + password + '\'' +
-                ", dob='" + dob + '\'' +
-                ", gender='" + gender + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", occupation='" + occupation + '\'' +
-                ", experience='" + experience + '\'' +
-                ", description='" + description + '\'' +
-                '}';
     }
 }
