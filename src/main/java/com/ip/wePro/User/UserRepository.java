@@ -1,4 +1,4 @@
-package com.ip.wePro.userInfo;
+package com.ip.wePro.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

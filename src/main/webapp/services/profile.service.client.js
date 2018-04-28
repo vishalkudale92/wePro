@@ -22,10 +22,10 @@
             return $http.post("/topics",topic);
         }
         function updateProfile(profile) {
-            return $http.put("/userprofile/updateProfile/"+111,profile);
+            return $http.put("/userprofile/updateProfile/"+1,profile);
         }
         function getProfile(userId){
-            return $http.get("/userprofile/getprofile/"+112);
+            return $http.get("/userprofile/getprofile/"+1);
         }
     }
 })();
