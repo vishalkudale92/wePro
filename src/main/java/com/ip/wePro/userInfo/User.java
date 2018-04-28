@@ -16,11 +16,12 @@ public class User {
     private String phone;
     private String edu;
     private String experience;
+    //private String skills;
     private String password;
 
     protected User(){}
 
-    public User(int userid, String name, String dob, String gender, String address, String email, String phone, String edu, String experience, String skills, String password) {
+    public User(int userid, String name, String dob, String gender, String address, String email, String phone, String edu, String experience, String password) {
         this.userid = userid;
         this.name = name;
         this.dob = dob;
@@ -104,9 +105,6 @@ public class User {
     public void setExperience(String experience) {
         this.experience = experience;
     }
-
-
-
     public String getPassword() {
         return password;
     }
