@@ -34,9 +34,8 @@ create table user
        phone varchar(255),
        edu varchar(255),
        experience varchar(255),
-       skills varchar(700),
        password varchar(255),
-       primary key(email)
+       primary key(userid)
 );
 
 
