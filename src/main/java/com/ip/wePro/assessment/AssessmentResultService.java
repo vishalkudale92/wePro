@@ -17,7 +17,7 @@ public class AssessmentResultService {
 	@Autowired
 	AssessmentRepository assessmentRepository;
 
-	public void addResult(AssessmentSubmission submittedAssessment , String userId) {
+	public void addResult(AssessmentSubmission submittedAssessment , int userId) {
 				
 		Map<Integer,Integer> CorrectSolution = new HashMap<Integer,Integer>();
 		Map<Integer,Integer> marksMap = new HashMap<Integer,Integer>();
@@ -65,6 +65,8 @@ public class AssessmentResultService {
 		}
 		
 		float finalMarks = (marksObtained/assessmentTotal)*100;
+		
+		System.out.println("finalMArks="+finalMarks);
 		
 		/*
 		 * Now, Creating an object of AssessmentResult & will save the record in the DB.

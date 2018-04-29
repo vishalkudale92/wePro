@@ -16,7 +16,7 @@
                 controller: "ManagerHireAssess",
 				controllerAs: "model"
             })
-            .when("/takeassessment", {
+            .when("/takeassesment", {
                 templateUrl: "views/takeassessment/templates/takeassessment.view.client.html",
                 controller: "TakeAssessmentController",
                 controllerAs: "model"

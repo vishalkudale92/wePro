@@ -6,7 +6,7 @@
        
     	function TakeAssessmentService($http) {
             var api = {
-            		retrieveAssessment : retrieveAssessment,
+            		retrieveAssessment : retrieveAssessment
             		submitAssessmentResult : submitAssessmentResult
             };
 
@@ -20,7 +20,7 @@
             function submitAssessmentResult(takenAssessmentSet)
             {
             	var userid = 1;
-            	return $http.post("/assessment/result/add/"+userid,takenAssessmentSet);
+            	return $http.post("/assessment/result/add/"+userid);
             }
         }    	
     	
