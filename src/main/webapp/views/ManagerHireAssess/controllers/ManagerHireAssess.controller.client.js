@@ -18,20 +18,28 @@
        {
     	   console.log(assessment);
     	   var i;
+    	   var flagCorrectSol = 0;
+    	   //var flagMarks=0;
     	   for(i=0;i<assessment.length;i++)
     		   {
     		   		if(assessment[i].correctAnswer == null)
-    		   			alert("Select the correct answer for all questions");
-    		   		else
     		   			{
-				   			var assessmentSet =  {"assessmentQuestions":assessment};
-				     	   console.log(assessmentSet);
-				     	   var projectId = 4444; 
-				     	   ManagerHireAssessService.addAssessment(projectId,assessmentSet).then(function (assessment_id) {
-				                console.log("Assessment ID from server"+assessment_id);
-				            });
-    		   			}
-    		   }   	   
+    		   			flagCorrectSol = 1;
+    		   			}    		   			
+    		   }
+    	   if(flagCorrectSol == 1)
+    		   {
+    		   		alert("Select the correct answer for all questions");
+    		   }
+    	   else
+    		   {
+	    		   var assessmentSet =  {"assessmentQuestions":assessment};
+		     	   console.log(assessmentSet);
+		     	   var projectId = 4444; 
+		     	   ManagerHireAssessService.addAssessment(projectId,assessmentSet).then(function (assessment_id) {
+		                console.log("Assessment ID from server"+assessment_id);
+		            });
+    		   }
        }    	
     }
 })();
