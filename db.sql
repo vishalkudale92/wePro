@@ -50,14 +50,14 @@ create table project_skills(
 	project_id int not null,
 	skill_name varchar(255) not null
 );
-     
-create table assessment_result(
-		user_id varchar(255),
-		assessment_id varchar(255),
-		result float(4,2),
-		primary key (user_id,assessment_id),
-		FOREIGN KEY (user_id) REFERENCES user(user_id)
-	);
+
+CREATE TABLE `assessment_result` (
+   `user_id` int(11) NOT NULL DEFAULT '0',
+   `assessment_id` varchar(255) NOT NULL DEFAULT '',
+   `result` float(5,2) DEFAULT NULL,
+   PRIMARY KEY (`user_id`,`assessment_id`),
+   CONSTRAINT `u_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+ );
 
 CREATE TABLE `user_project` (
    `id` bigint(20) NOT NULL,
